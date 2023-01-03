@@ -299,14 +299,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5318100091865480648, guid: e6ba6a9666eaa49da8b9c08c6004ea36, type: 3}
-      propertyPath: playerHeight
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5318100091865480648, guid: e6ba6a9666eaa49da8b9c08c6004ea36, type: 3}
-      propertyPath: whatIsGroung.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
     - target: {fileID: 5318100091865480654, guid: e6ba6a9666eaa49da8b9c08c6004ea36, type: 3}
       propertyPath: m_RootOrder
       value: 2
