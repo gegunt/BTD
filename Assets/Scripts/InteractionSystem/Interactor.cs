@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Interactor : MonoBehaviour
 {
@@ -15,6 +16,18 @@ public class Interactor : MonoBehaviour
     {
         _numFound = Physics.OverlapSphereNonAlloc(_interactionPoint.position, _interactionPointRadius,
             _colliders, _interacionableMask);
+
+        //TODO - refactor this
+        if (_numFound > 0)
+        {
+            var interactable = _colliders[0].GetComponent<IInteractable>();
+
+            if (interactable != null && Keyboard.current.eKey.wasPressedThisFrame)
+            {
+                interactable.Interact(this);
+            }
+
+        }
     }
 
     private void OnDrawGizmos()
