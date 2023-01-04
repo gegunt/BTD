@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGroung;
-    private bool grounded;
+    public bool grounded;
 
     public Transform orientation;
 
@@ -34,9 +34,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()  //TODO - refactor
     {
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGroung);
+        grounded = Physics.Raycast(transform.position, Vector3.down,
+            playerHeight * 0.5f + 0.2f, whatIsGroung);
 
         MyInput();
+        SpeedControl();
 
         if (grounded)
         {
@@ -66,5 +68,18 @@ public class PlayerMovement : MonoBehaviour
 
         rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
         //TODO - mb replace 10f to serialized field
+    }
+
+    private void SpeedControl()
+    {
+        Vector3 flatVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        if(flatVelocity.magnitude > moveSpeed)
+        {
+            Vector3 limitedVelocity = flatVelocity.normalized * moveSpeed;
+            rb.velocity = new Vector3(limitedVelocity.x, rb.velocity.y,
+                limitedVelocity.z);
+        }
+
     }
 }
