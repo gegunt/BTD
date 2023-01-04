@@ -123,29 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &138612384 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5318100091865480655, guid: e6ba6a9666eaa49da8b9c08c6004ea36, type: 3}
-  m_PrefabInstance: {fileID: 5318100090807863149}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &138612388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138612384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37ce1571b730d4335890a8ec2464ad03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interactionPoint: {fileID: 1970905408}
-  _interactionPointRadius: 1.5
-  _interacionableMask:
-    serializedVersion: 2
-    m_Bits: 64
-  _numFound: 0
 --- !u!4 &385597004 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5318100091174189345, guid: e6ba6a9666eaa49da8b9c08c6004ea36, type: 3}
@@ -257,6 +234,7 @@ GameObject:
   - component: {fileID: 578238974}
   - component: {fileID: 578238973}
   - component: {fileID: 578238972}
+  - component: {fileID: 578238976}
   m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
@@ -342,14 +320,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &578238976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578238971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e2457391db81465bad612bf001ab635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prompt: 
 --- !u!4 &1074838070 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5318100091880602971, guid: e6ba6a9666eaa49da8b9c08c6004ea36, type: 3}
-  m_PrefabInstance: {fileID: 5318100090807863149}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1970905408 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1000989791452283185, guid: e6ba6a9666eaa49da8b9c08c6004ea36, type: 3}
   m_PrefabInstance: {fileID: 5318100090807863149}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1297969790184215076
@@ -424,14 +410,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1000989791452283185, guid: e6ba6a9666eaa49da8b9c08c6004ea36, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000989791452283185, guid: e6ba6a9666eaa49da8b9c08c6004ea36, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.68
-      objectReference: {fileID: 0}
     - target: {fileID: 5318100091865480654, guid: e6ba6a9666eaa49da8b9c08c6004ea36, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -479,10 +457,6 @@ PrefabInstance:
     - target: {fileID: 5318100091865480655, guid: e6ba6a9666eaa49da8b9c08c6004ea36, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5318100091978192423, guid: e6ba6a9666eaa49da8b9c08c6004ea36, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6ba6a9666eaa49da8b9c08c6004ea36, type: 3}
