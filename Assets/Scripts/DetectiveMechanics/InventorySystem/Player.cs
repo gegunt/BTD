@@ -2,16 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IInteractable
+public class Player : MonoBehaviour
 {
     public InventoryObject inventory;
-    public bool Interact(Interactor interactor)
+
+    private void OnApplicationQuit()
     {
-        var item = interactor.GetComponent<Item>();
-        inventory.AddItem(item.item, 1);
-        Destroy(interactor.gameObject);
-        Debug.Log("Collecting clue");
-        return true;
+        inventory.Container.Clear();
     }
+
 }
 

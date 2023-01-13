@@ -23,18 +23,13 @@ public class Interactor : MonoBehaviour
         if (_numFound > 0)
         {
             var interactable = _colliders[0].GetComponent<IInteractable>();
+            var item = _colliders[0].GetComponent<Item>();
 
             if (interactable != null && Keyboard.current.eKey.wasPressedThisFrame)
             {
-                //interactable.Interact(this);
-                var other = interactable.Interact(this);
-                var item = GetComponent<Item>();
-                Debug.Log(other);
-                if (item)
-                {
-                    inventory.AddItem(item.item, 1);
-                    Destroy(this.gameObject);
-                }
+                interactable.Interact(this);
+                inventory.AddItem(item.item, 1);
+                Destroy(_colliders[0].gameObject);
             }
 
         }
@@ -45,4 +40,5 @@ public class Interactor : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_interactionPoint.position, _interactionPointRadius);
     }
+
 }
