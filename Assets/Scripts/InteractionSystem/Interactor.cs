@@ -11,6 +11,8 @@ public class Interactor : MonoBehaviour
 
     private readonly Collider[] _colliders = new Collider[3];
     [SerializeField] private int _numFound;
+    public InventoryObject inventory;
+
 
     void Update()
     {
@@ -24,7 +26,15 @@ public class Interactor : MonoBehaviour
 
             if (interactable != null && Keyboard.current.eKey.wasPressedThisFrame)
             {
-                interactable.Interact(this);
+                //interactable.Interact(this);
+                var other = interactable.Interact(this);
+                var item = GetComponent<Item>();
+                Debug.Log(other);
+                if (item)
+                {
+                    inventory.AddItem(item.item, 1);
+                    Destroy(this.gameObject);
+                }
             }
 
         }
