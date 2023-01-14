@@ -11,8 +11,10 @@ public class Interactor : MonoBehaviour
 
     private readonly Collider[] _colliders = new Collider[3];
     [SerializeField] private int _numFound;
+    public InventoryObject inventory;
 
-    private void Update()
+
+    void Update()
     {
         _numFound = Physics.OverlapSphereNonAlloc(_interactionPoint.position, _interactionPointRadius,
             _colliders, _interacionableMask);
@@ -21,10 +23,13 @@ public class Interactor : MonoBehaviour
         if (_numFound > 0)
         {
             var interactable = _colliders[0].GetComponent<IInteractable>();
+            var item = _colliders[0].GetComponent<Item>();
 
             if (interactable != null && Keyboard.current.eKey.wasPressedThisFrame)
             {
                 interactable.Interact(this);
+                inventory.AddItem(item.item, 1);
+                Destroy(_colliders[0].gameObject);
             }
 
         }
@@ -35,4 +40,5 @@ public class Interactor : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_interactionPoint.position, _interactionPointRadius);
     }
+
 }
