@@ -1,0 +1,9 @@
+<line><character>Tom</character> <type>Dialogue</type><text>Hello everyone how are you doing today.</text></line>
+<line><character>Tom</character> <type>Dialogue</type><text>I need to talk to you for a few minutes<text></line>
+<line><character>May</character> <type>Dialogue</type><text>Sure, no problem</text></line>
+<line><character>Claire</character> <type>Dialogue</type><text>hello people</text> </line>
+<line><character>Claire</character> <type>Action</type><text>smiles</text> </line>
+<line><character>Tom</character> <type>Dialogue</type><text>So we are going to have a party</text></line>
+<line><character>Claire</character> <type>Route</type> <routeName>route1</routeName> <choice>yes</choice> <choice>no</choice> </line>
+<line><character>Claire</character> <type>Route</type>on <text>path 1 </text></line>
+<line><character>Claire</character> <route>route2</route><action>on path 2</action> </line>

@@ -1,0 +1,16 @@
+{
+    "toolIconData": [
+        {
+            "scriptPath": "Assets/Storyteller/Game Bridge/Bridged Data/Scripts/CollisionInteractionTrigger.cs",
+            "scriptGUID": "567bc4034b4937a4d92fb4fc97429fb8"
+        },
+        {
+            "scriptPath": "Assets/Storyteller/Game Bridge/Bridged Data/Scripts/ClickListener.cs",
+            "scriptGUID": "bcbc1964f47581044add792822e1d627"
+        },
+        {
+            "scriptPath": "Assets/Storyteller/Game Bridge/Bridged Data/Scripts/InteractionTriggerManager.cs",
+            "scriptGUID": "aa0ed63610fb15e41ba9a2e442d66d73"
+        }
+    ]
+}
